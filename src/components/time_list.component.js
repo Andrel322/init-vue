@@ -30,6 +30,10 @@ export default {
             </table>
          </div>
     `,
+    created(){
+        this.$store.dispatch('load-times');
+    },
+
     data() {
         return {
             order: {
@@ -42,6 +46,10 @@ export default {
         }
     },
     methods: {
+        showNovoJogo(){
+           this.$store.commit('show-time-novojogo'); 
+        },
+
         sortBy(coluna) {
             this.order.keys = coluna;
             this.order.sort = this.order.sort == 'desc' ? 'asc' : 'desc';

@@ -21,6 +21,9 @@ export default {
             </form>
         </div>
     `,
+    mounted(){
+        this.initJogo(this.$store.state.times);
+    },
     data() {
         return {
             novoJogo: {
@@ -39,10 +42,13 @@ export default {
     methods: {
         fimJogo() {
             let timeAdversario = this.novoJogo.fora.time;
+            let timeCasa = this.novoJogo.casa.time;
             let gols = +this.novoJogo.casa.gols;
             let golsAdversario = +this.novoJogo.fora.gols;
-            this.novoJogo.casa.time.fimJogo(gols, timeAdversario, golsAdversario);
-            event.$emit('show-time-list');
+            timeCasa.fimJogo(gols, timeAdversario, golsAdversario);
+            this.$store.commit('update', timeCasa);
+            this.$store.commit('update', timeAdversario);
+            this.$store.commit('show-time-list');
         },
 
         initJogo(times) {
