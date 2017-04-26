@@ -24,6 +24,7 @@ export default {
     mounted(){
         this.initJogo(this.$store.state.times);
     },
+
     data() {
         return {
             novoJogo: {
@@ -54,7 +55,7 @@ export default {
         initJogo(times) {
             let indexCasa = Math.floor(Math.random() * 20),
                 indexFora = Math.floor(Math.random() * 20);
-            if (indexCasa != indexFora) {
+            if (indexCasa !== indexFora) {
                 this.novoJogo.casa.time = times[indexCasa];
                 this.novoJogo.casa.gols = 0;
                 this.novoJogo.fora.time = times[indexFora];

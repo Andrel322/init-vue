@@ -3,3 +3,10 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
+.idea/init-vue.iml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/watcherTasks.xml
+.idea/workspace.xml
+.vscode/
